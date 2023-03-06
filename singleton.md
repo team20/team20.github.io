@@ -1,3 +1,5 @@
+Singleton
+===
 A singleton prevents multiple objects being created from one class. We use it to prevent motors from being created multiple times.  
 Replace `ExampleSubsystem` with the name of your `Subsystem`, and make sure to change it in the `Exception` as well.
 
