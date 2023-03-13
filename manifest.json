@@ -3,7 +3,7 @@
 	"short_name": "Team 20",
 	"description": "A knowledge base of various programming related items.",
 	"start_url": "/",
-	"display": "minimal-ui",
+	"display": "standalone",
 	"icons": [
 		{
 			"src": "icons/icon-512.png",

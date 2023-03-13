@@ -8,19 +8,19 @@ const resourceFiles = [
 	"/assets/js/just-the-docs.js",
 	"/assets/js/search-data.json",
 	// Actual assets
-	"/favicon.png",
-	"/apple-touch-icon.png",
+	"/icons/apple-touch-icon.png",
+	"/icons/favicon.png",
 	"/icons/icon-512.png",
-	"/docs/index.html",
-	"/docs/advanced_command_construction.html",
-	"/docs/arduino_on_vs_code.html",
-	"/docs/command_timers.html",
-	"/docs/leds.html",
-	"/docs/pids.html",
-	"/docs/singleton.html",
-	"/docs/subsystems_and_commands.html",
-	"/docs/suppliers_and_lambda_expressions.html",
-	"/docs/team20_styleguide.html"
+	"/index.html",
+	"/advanced_command_construction.html",
+	"/arduino_on_vs_code.html",
+	"/command_timers.html",
+	"/leds.html",
+	"/pids.html",
+	"/singleton.html",
+	"/subsystems_and_commands.html",
+	"/suppliers_and_lambda_expressions.html",
+	"/team20_styleguide.html"
 ]
 self.addEventListener("install", (e) => {
 	console.log("[Service Worker] Install");
