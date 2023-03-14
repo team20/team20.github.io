@@ -32,4 +32,4 @@ A start time is captured, and we continuously check if enough time has passed be
 		}
 	}
 
-Instant.now() gets the current time, and Duration.between().toMillis() returns how much time has passed between the start time(m_startTime) and the end time(Instant.now()) in milliseconds.
+`Instant.now()` gets the current time, and `Duration.between().toMillis()` returns how much time has passed between the start time(`m_startTime`) and the end time(`Instant.now()`) in milliseconds.
