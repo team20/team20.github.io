@@ -3,16 +3,15 @@ Style Guide
 Keep code well formatted makes it easier to figure out what's happening. Without it, your codebase looks like a jumbled mess that's completely unreadable, and no one will be able to figure out what your code does. In general, follow the general Java style, but there are specific differences to be aware of when coding in Team 20. The two differences are split into differences that come from WPILib, Team 20 specific differences.
 
 Java Style in a nutshell
-===
-Every word in a class should be capitalized, e.g. `ClassName`. This is known as upper camel case or Pascal case  
+---
+Every word in a class should be capitalized, e.g. `ClassName`. This is known as upper camel case or Pascal case.  
 The first word in a variable should be lower case, with subsequent words being capitalized, e.g. `variableName`. This is known as lower camel case.
 Enum elements should be all uppercase, with words separated by underscores, e.g. `ENUM_VALUE`  
 
 Team 20 Style
-===
+---
 Prefix static variables with `s_` and don't capitalize the first word after it, e.g. `s_subsystem`  
 Format with tabs!  
-Also, use Shift + Alt + O to add missing imports, and remove unused imports.  
 
 Configuring VS Code for proper tab formatting
 ---
@@ -22,6 +21,6 @@ Search for "Detect Indentation" and uncheck it. Search for "Insert Spaces" and u
 VS Code will now always format with tabs, no matter the file(this also means you shouldn't save files you shouldn't touch, like vendordeps files)  
 
 WPILib Style  
-===
+---
 Prefix constants with `k`, and capitalize the word after it, e.g. `kConstant`  
 Prefix member variables with `m_` and don't capitalize the first word after it, e.g. `m_memberVariable`  
