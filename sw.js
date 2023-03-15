@@ -15,6 +15,7 @@ const resourceFiles = [
 	"/advanced_command_construction.html",
 	"/arduino_on_vs_code.html",
 	"/command_timers.html",
+	"/common_vs_code_keyboard_shortcuts.html",
 	"/leds.html",
 	"/pids.html",
 	"/singleton.html",
