@@ -1,6 +1,6 @@
 LEDs
 ===
-LEDs are controlled with the Arduino. The way to control them is actually very simple: create a color object, and set the color of the LED. The LEDs are in strips, and so you can create "patterns" by setting different LEDs to different colors. Things get more complicated when you want to control LEDs from a controller and robot code.
+LEDs are controlled with the Arduino. The way to control them is actually very simple: create a color object, and set the color of the LED. The LEDs are in strips, and so you can create "patterns" by setting different LEDs to different colors. Things get more complicated when you want to control LEDs from a PS4 controller and robot code.
 
 I2C
 ===

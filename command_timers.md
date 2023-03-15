@@ -1,6 +1,9 @@
-Using timers in a command
+Using Timers in a Command
 ===
-Sometimes, you want to use timing to control a mechanism on the robot. This shows how to use a timer in a Command.  
+Sometimes, you want to use a timer to control a mechanism on the robot. Maybe your mechanism does something for one second, and should finish after two. This example shows you how to use a timer in a command.  
+
+Example
+---
 A start time is captured, and we continuously check if enough time has passed before doing something and finishing the command.
 
 	public class ExampleCommand extends CommandBase {

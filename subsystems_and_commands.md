@@ -36,7 +36,9 @@ Each subsystem should initialize and configure all the parts necessary for the m
 
 Commands
 ---
-Commands are the building blocks for robot control. Commands are created and provided with arguments, and then they use the methods provided by a subsystem to do stuff. A DriveCommand might drive the robot with joysticks as the argument/input. It would take the joystick input and call methods in the DriveSubsystem using the joystick input to set the speed of some motors to move the robot. A MoveArmCommand could move an arm to a certain position, with the position changing depending on the arguments the command is created with. A command can also do conditional logic. It could call a subsystem method to get an encoder reading, and if the value is above a certain point, it should do something different. Commands take the methods provided by a subsystem, and put in additional logic to create unique behavior and controls. But how do you execute a command?  
+Commands are the building blocks for robot control. Commands are created and provided with arguments, and then they use the methods provided by a subsystem to do stuff. A DriveCommand might drive the robot with joysticks as the argument/input. It would take the joystick input and call methods in the DriveSubsystem using the joystick input to set the speed of some motors to move the robot. A MoveArmCommand could move an arm to a certain position, with the position changing depending on the arguments the command is created with.  
+
+A command can also do conditional logic. It could call a subsystem method to get an encoder reading, and if the value is above a certain point, it should do something different. Commands take the methods provided by a subsystem, and put in additional logic to create unique behavior and controls. But how do you execute a command?  
 
 Triggers
 ---
