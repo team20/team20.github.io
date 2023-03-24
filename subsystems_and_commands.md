@@ -15,9 +15,9 @@ Picture this: We have no subsystems, no commands, just a Java class to house eve
 This will very quickly add up to 20+ lines of code.  
 And we haven't even started on the complicated stuff. Now that everything has been set up, we can start to do things with motors. But first, we need to constantly obtain data from our hardware, so our code now runs in a loop, constantly checking for conditions. Now we want to bind our controller buttons to certain actions, like spinning our motors at 10% speed, but only when the button is pressed. It should stop when we let go. It'll look something like this.
 
-	if (button.isPressed()) {
-		m_motor1.set(0.5);
-		m_motor2.set(0.5);
+	if (m_controller.getRawButton(1)) {
+		m_motor1.set(0.1);
+		m_motor2.set(0.1);
 	} else {
 		m_motor1.set(0);
 		m_motor2.set(0);
