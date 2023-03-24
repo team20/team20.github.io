@@ -1,5 +1,5 @@
 // Increment when you update the repo
-const cacheName = "KnowledgeBase-v1";
+const cacheName = "KnowledgeBase-v2";
 // URLs for all the assets
 const resourceFiles = [
 	// Just The Docs assets
@@ -26,6 +26,8 @@ const resourceFiles = [
 	"/team20_styleguide.html"
 ]
 self.addEventListener("install", (e) => {
+	// Make this the current service worker
+	self.skipWaiting();
 	console.log("[Service Worker] Install");
 	e.waitUntil(
 		(async () => {
@@ -59,6 +61,9 @@ self.addEventListener("fetch", (e) => {
 	);
 });
 self.addEventListener("activate", (e) => {
+	// Immediately start controlling the page with this service worker
+	// Allows PWA to be updated on navigation, without a need to close the app
+	clients.claim();
 	e.waitUntil(
 		// Iterate through the names of all the cache objects
 		caches.keys().then((keyList) => {
