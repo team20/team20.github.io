@@ -1,27 +1,20 @@
 Singleton
 ===
-A singleton prevents multiple objects being created from one class. We use it to prevent motors from being created in code multiple times.  
+A singleton prevents multiple objects being created from one class. We use it to prevent subsystems from being initialized more than once, as motors and similar things being initialized more than once can cause problems.
 
 Example
 ---
-Replace `ExampleSubsystem` with the name of your `Subsystem`, and make sure to change it in the `Exception` as well. The `get` method is so the subsystem can be accessed from any command.
+In a subsystem, declare a private static member variable(in the subsystem, but not in any methods) called `s_subsystem`(don't assign anything to it yet,) with the type being the subsystem.  
+In your subsystem's constructor, paste this snippet of code in, remembering to add the name of the subsystem in the `Exception`.
 
-	public class ExampleSubsystem extends SubsystemBase {
-		private static ExampleSubsystem s_subsystem;
-	
-		public ExampleSubsystem() {
-			// Singleton
-			if (s_subsystem != null) {
-				try {
-					throw new Exception("Example subsystem already initialized!");
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			s_subsystem = this;
-		}
-	
-		public static ExampleSubsystem get() {
-			return s_subsystem;
+	// Singleton
+	if (s_subsystem != null) {
+		try {
+			throw new Exception("Example subsystem already initialized!");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+	s_subsystem = this;
+
+This code works by checking if `s_subsystem` is currently storing anything. Since `s_subsystem` wasn't assigned anything, its default value is `null`. In the constructor, we assign the `s_subsystem` to the subsystem being created. Now that `s_subsystem` isn't `null` anymore, the if statement is true, and it will log an exception saying the subsystem was already initialized.
