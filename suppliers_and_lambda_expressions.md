@@ -14,10 +14,10 @@ To solve this, we use lambda expressions or anonymous functions. They act like n
 	m_driveSubsystem.setDefaultCommand(new DefaultDriveCommand(
 		() -> m_controller.getRawAxis(0)));
 
-Now `getRawAxis` won't get called until some code in `DefaultDriveCommand` calls it. When it does call it, it will get the state of the joystick, which can be used to move the robot. But what does that code look like? The command constructor will accept a variable with the type `Supplier<Double>`, and the code will call the `get` method on the variable to get the joystick state.  
+Now `getRawAxis` won't get called until some code in `DefaultDriveCommand` calls it. When it does call it, it will get the state of the joystick, which can be used to move the robot.
 
-Example:
-
+Example
+---
 	public class DefaultDriveCommand extends CommandBase {
 		private final Supplier<Double> m_forwardSpeed;
 
@@ -26,6 +26,8 @@ Example:
 		}
 		@Override
 		public void execute() {
-			DriveSubsystem.get().setMotorSpeed(m_forwardSpeed);
+			DriveSubsystem.get().setMotorSpeed(m_forwardSpeed.get());
 		}
 	}
+
+The command constructor accepts a variable with the type `Supplier<Double>`, and the code will call the `get` method on the variable to get the joystick state.  
