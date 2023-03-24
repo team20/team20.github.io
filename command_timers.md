@@ -8,15 +8,13 @@ A start time is captured, and we continuously check if enough time has passed be
 
 	public class ExampleCommand extends CommandBase {
 		private Instant m_startTime;
-
-		// Called when the command is initially scheduled.
+	
 		@Override
 		public void initialize() {
 			// This stores the start time of the command
 			m_startTime = Instant.now();
 		}
-
-		// Called every time the scheduler runs while the command is scheduled.
+	
 		@Override
 		public void execute() {
 			// This checks how much time has passed since the command started,
@@ -25,8 +23,7 @@ A start time is captured, and we continuously check if enough time has passed be
 				// Run the mechanism
 			}
 		}
-
-		// Returns true when the command should end.
+	
 		@Override
 		public boolean isFinished() {
 			// We can also use Duration.between to finish the command after a certain amount
