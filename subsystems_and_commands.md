@@ -12,7 +12,6 @@ private final CANSparkMax m_motor2 = new CANSparkMax(Constants.kID1, MotorType.k
 private final CANSparkMax m_motor3 = new CANSparkMax(Constants.kID2, MotorType.kBrushless);
 ...
 ```
-
 This will very quickly add up to 20+ lines of code.  
 And we haven't even started on the complicated stuff. Now that everything has been set up, we can start to do things with motors. But first, we need to constantly obtain data from our hardware, so our code now runs in a loop, constantly checking for conditions. Now we want to bind our controller buttons to certain actions, like spinning our motors at 10% speed, but only when the button is pressed. It should stop when we let go. It'll look something like this.
 ```java
@@ -24,7 +23,6 @@ if (m_controller.getRawButton(1)) {
 	m_motor2.set(0);
 }
 ```
-
 That's a lot of lines for what should be simple. And imagine doing this multiple times for each button or condition. Soon, you'd have no idea how anything works, and a small change could break everything. So to solve this, WPILib has a framework that revolves around commands and subsystems, allowing the code we had before, to be organized and modular, only containing the motors, encoders, etc needed for a specific physical mechanism to work. But how does it all work?
 
 How?

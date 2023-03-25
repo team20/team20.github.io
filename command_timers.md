@@ -32,5 +32,4 @@ public class ExampleCommand extends CommandBase {
 	}
 }
 ```
-
 `Instant.now()` gets the current time, and `Duration.between().toMillis()` returns how much time has passed between the start time(`m_startTime`) and the end time(`Instant.now()`) in milliseconds. By checking if the time passed is more than a certain value, we can do certain things after a certain amount of time.

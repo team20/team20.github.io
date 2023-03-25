@@ -17,5 +17,4 @@ if (s_subsystem != null) {
 }
 s_subsystem = this;
 ```
-
 This code works by checking if `s_subsystem` is currently storing anything. Since `s_subsystem` wasn't assigned anything, its default value is `null`. In the constructor, we assign the subsystem being created to `s_subsystem`. Now that `s_subsystem` isn't `null` anymore, the if statement is true, and it will log an exception saying the subsystem was already initialized.

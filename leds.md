@@ -12,7 +12,6 @@ for (int i = 0; i < LED_COUNT; i++) {
 	strip.setPixelColor(i, strip.Color(0, 255, 0));
 }
 ```
-
 `strip.Color` can be replaced by any function that returns a color. Creating a pattern consists of doing math to determine what colors should go to each LED. For example, you can use modulus to alternate colors on an LED strip. This guide won't go into specific patterns, you'll have to figure out how to make a pattern yourself.
 If all of this works correctly, you can start controlling LEDs from a PS4 controller and robot code.
 
@@ -31,7 +30,6 @@ void receivingMethod() {
 	ledState = Wire.read();
 }
 ```
-
 On the RoboRIO side, use `new I2C()` to start the I2C connection, providing `Port.kMXP` as the port to connect to and a constant containing the exact address you passed into `Wire.begin()`.
 
 Lighting things up

@@ -39,5 +39,4 @@ public class DefaultDriveCommand extends CommandBase {
 	}
 }
 ```
-
 The command constructor accepts a variable with the type `Supplier<Double>`, with `Double` being the type, and the code calls the `get` method on the variable to get the joystick state, passing the joystick state to a method to set the speed of a motor.  
