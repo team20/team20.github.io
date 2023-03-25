@@ -11,25 +11,27 @@ CommandComposer
 
 Example
 ---
-
-	/**
-	 * 
-	 * @param someCondition A condition that's either true or false
-	 * @param position      An enum representing positions
-	 * @return
-	 */
-	public static Command createCommandSequence(boolean someCondition, Position position) {
-		// If some condition is true, go to the position
-		if (someCondition) {
-			return new ExampleCommand(position);
-		} else {
-			// If not, go to the middle first, then go to the position
-			return new SequentialCommandGroup(new ExampleCommand(Position.MIDDLE), new ExampleCommand(position));
-		}
+```java
+/**
+ * 
+ * @param someCondition A condition that's either true or false
+ * @param position      An enum representing positions
+ * @return
+ */
+public static Command createCommandSequence(boolean someCondition, Position position) {
+	// If some condition is true, go to the position
+	if (someCondition) {
+		return new ExampleCommand(position);
+	} else {
+		// If not, go to the middle first, then go to the position
+		return new SequentialCommandGroup(new ExampleCommand(Position.MIDDLE), new ExampleCommand(position));
 	}
+}
+```
 
 DeferredCommand
 ===
 `DeferredCommand` allows command construction to be delayed until runtime(instead of initialization.) When you need to create commands where their behavior changes depending on the condition, use `DeferredCommand`. To use it, use a lambda expression that returns a `Command`. `CommandComposer` can also be used in place of a `Command`.
-
-	new DeferredCommand(() -> CommandComposer.createCommandSequence(true, Position.FAR));
+```java
+new DeferredCommand(() -> CommandComposer.createCommandSequence(true, Position.FAR));
+```

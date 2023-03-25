@@ -7,9 +7,10 @@ The three letters each stand for a different term in the calculation. The only o
 Tuning PIDs
 ===
 I think I'm supposed to put together an intricate guide here. Really, the way we tune PIDs is we start with a low P value, like 0.0001, and slowly increase it until we're happy. You always want to start low so your mechanism doesn't break or pose a safety hazard. Also, first thing you should do is cap the maximum speed so it can't move fast enough to break itself or pose a safety hazard. In the `Constants` class, that looks like this:
-
+```java
 	// Min here is for the speed in reverse
 	// The exact value will have to be determined by experiment,
 	// because you don't want it so slow it barely moves
 	public static final kMinOutput = -0.1;
 	public static final kMaxOutput = 0.1;
+```
