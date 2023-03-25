@@ -1,3 +1,8 @@
+---
+title: Home
+nav_order: 1
+permalink: /
+---
 Team 20 Knowledge Base
 ===
 Welcome to the Team 20 Programming Knowledge Base! This houses various programming resources, ranging from explaining robot code, to advanced tricks and examples to use in robot code. It is meant to be a reference of sorts for programming related tasks like programming LEDs, keyboard shortcuts, or software downloads.
