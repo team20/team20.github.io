@@ -1,6 +1,6 @@
 Using Timers in a Command
 ===
-Sometimes, you want to use a timer to control a mechanism on the robot. Maybe your mechanism does something for one second, and should finish after two. This example shows you how to use a timer in a command.  
+Sometimes you want to use a timer to control a mechanism on the robot. Maybe you want your mechanism to do something for one second and finish after two. This example shows you how to use a timer in a command.  
 
 Example
 ---
@@ -33,4 +33,4 @@ public class ExampleCommand extends CommandBase {
 }
 ```
 
-`Instant.now()` gets the current time, and `Duration.between().toMillis()` returns how much time has passed between the start time(`m_startTime`) and the end time(`Instant.now()`) in milliseconds.
+`Instant.now()` gets the current time, and `Duration.between().toMillis()` returns how much time has passed between the start time(`m_startTime`) and the end time(`Instant.now()`) in milliseconds. By checking if the time passed is more than a certain value, we can do certain things after a certain amount of time.
