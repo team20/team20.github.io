@@ -11,6 +11,7 @@ const resourceFiles = [
 	"/icons/apple-touch-icon.png",
 	"/icons/favicon.png",
 	"/icons/icon-512.png",
+	"/icons/maskable-icon-512.png",
 	"/index.html",
 	"/advanced_command_construction.html",
 	"/arduino_on_vs_code.html",
