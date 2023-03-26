@@ -3,7 +3,7 @@ Advanced Command Construction
 Sometimes the behavior of a command needs to change depending on the environment.  
 Sometimes you need to run multiple commands in a sequence, and the commands change depending on the conditions.  
 However, directly binding a command to a button/`Trigger`/`JoystickButton` gives you little flexibility to change the behavior. Using `DeferredCommand`, you can create commands on the fly which have different behavior when you run them in a match.
-Depending on your exact scenario, you may also need `CommandComposer` to create command sequences. 
+Depending on your exact scenario, you may also need `CommandComposer` to create command sequences.
 
 Also, sometimes you have a long command sequence(usually for autos,) and you'd prefer not to clog up `RobotContainer`. CommandComposer also solves that problem.
 

@@ -6,7 +6,7 @@ Let's say you have a `Command` and you want to provide it with input from a joys
 m_driveSubsystem.setDefaultCommand(new DefaultDriveCommand(
 	m_controller.getRawAxis(0)));
 ```
-However, all this does is call `getRawAxis` when the command is constructed at startup. The method gets called and returns a number, but that number won't ever change. So your joystick won't work because the command has no way of obtaining the joystick state after its constructed.  
+However, all this does is call `getRawAxis` when the command is constructed at startup. The method gets called and returns a number, but that number won't ever change. So your joystick won't work because the command has no way of obtaining the joystick state after its constructed.
 
 To solve this, we use lambda expressions or anonymous functions. They act like normal methods, but without the boilerplate of declaring a method or a name(hence *anonymous* function.) We use them kind of like a wrapper around normal methods to allow a normal method to be called at a later point. Here's an example like the previous one, but with a lambda expression:
 ```java
@@ -39,4 +39,4 @@ public class DefaultDriveCommand extends CommandBase {
 	}
 }
 ```
-The command constructor accepts a variable with the type `Supplier<Double>`, with `Double` being the type, and the code calls the `get` method on the variable to get the joystick state, passing the joystick state to a method to set the speed of a motor.  
+The command constructor accepts a variable with the type `Supplier<Double>`, with `Double` being the type, and the code calls the `get` method on the variable to get the joystick state, passing the joystick state to a method to set the speed of a motor.
