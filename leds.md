@@ -1,7 +1,7 @@
 LEDs
 ===
 Refer to the [Adafruit NeoPixel docs](https://adafruit.github.io/Adafruit_NeoPixel/html/class_adafruit___neo_pixel.html) if you get stuck.  
-LEDs are controlled by the Arduino. Controlling them is actually very simple: create a color object, with RGB values, and use it to set the color of an LED. LEDs are in strips, which means you can create "patterns" by setting different LEDs to different colors.  
+LEDs are controlled by an Arduino. Controlling them is actually very simple: create a color object, with RGB values, and use it to set the color of an LED. LEDs are in strips, which means you can create "patterns" by setting different LEDs to different colors.  
 
 To start, create an `Adafruit_NeoPixel` object, which is usually created in the format of `Adafruit_NeoPixel strip()`. When creating it, you need to first give it the number of LEDs on the strip, the pin number it's connected to, and some pixel flags.  
 The first pixel flag is the frequency, which should always be `NEO_KHZ800`. The next flag is the bitstream used to communicate with the LEDs. It's critical that the correct bitstream is set, or there will be a mismatch between the color you set an LED to, and the color it displays. For example, if you set an LED to red, and it lights up green, chances are the incorrect bitstream is set, and you need to figure out/obtain the correct bitstream and set it in code. To combine pixel flags, just add them together like numbers.  
