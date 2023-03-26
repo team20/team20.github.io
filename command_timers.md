@@ -1,10 +1,10 @@
 Using Timers in a Command
 ===
-Sometimes you want to use a timer to control a mechanism on the robot. Maybe you want your mechanism to do something for one second and finish after two. This example shows you how to use a timer in a command.  
+Sometimes you want to use a timer to control a mechanism on the robot. Maybe you want your mechanism to do something for one second, do something else for another second, and finish after two seconds. `Instant` and `Duration` can be used to create timers in commands.
 
 Example
 ---
-A start time is captured, and we continuously check if enough time has passed before doing something and finishing the command.
+A start time is captured, and we continuously check if enough time has passed before doing something else and finishing the command.
 ```java
 public class ExampleCommand extends CommandBase {
 	private Instant m_startTime;
@@ -17,10 +17,12 @@ public class ExampleCommand extends CommandBase {
 
 	@Override
 	public void execute() {
+		// Start doing something
+		mechanism.run()
 		// This checks how much time has passed since the command started,
-		// and if it's over 1000 milliseconds, we run the mechanism
+		// and if it's over 1000 milliseconds, we do something else
 		if (Duration.between(m_startTime, Instant.now()).toMillis() >= 1000) {
-			// Run the mechanism
+			// Do something else
 		}
 	}
 
