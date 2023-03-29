@@ -4,8 +4,14 @@ Refer to the [Adafruit NeoPixel docs](https://adafruit.github.io/Adafruit_NeoPix
 LEDs are controlled by an Arduino. Controlling them is actually very simple: create a color object, with RGB values, and use it to set the color of an LED. LEDs are in strips, which means you can create "patterns" by setting different LEDs to different colors.
 
 To start, create an `Adafruit_NeoPixel` object, which is usually created in the format of `Adafruit_NeoPixel strip()`. When creating it, you need to first give it the number of LEDs on the strip, the pin number it's connected to, and some pixel flags.  
-The first pixel flag is the frequency, which should always be `NEO_KHZ800`. The next flag is the bitstream used to communicate with the LEDs. It's critical that the correct bitstream is set, or there will be a mismatch between the color you set an LED to, and the color it displays. For example, if you set an LED to red, and it lights up green, chances are the incorrect bitstream is set, and you need to figure out/obtain the correct bitstream and set it in code. To combine pixel flags, just add them together like numbers.
+The first pixel flag is the frequency, which should always be `NEO_KHZ800`. The next flag is the bitstream used to communicate with the LEDs. Refer to the Adafruit NeoPixel docs to see the available bitstreams. It's critical that the correct bitstream is set, or there will be a mismatch between the color you set an LED to, and the color it displays. For example, if you set an LED to red, and it lights up green, chances are the incorrect bitstream is set, and you need to figure out/obtain the correct bitstream and set it in code. To combine pixel flags, just add them together like numbers.
 
+Your `strip` object should look something like this:
+```c++
+int ledCount = 10;
+int ledPinNumber = 5;
+Adafruit_NeoPixel strip(ledCount, ledPinNumber, NEO_KHZ800 + NEO_RGB)
+```
 After you created your LED strip, call `setPixelColor` on it to set the color of an LED on the strip. It takes the LED number(zero-indexed of course) and a color, which can be created by calling `Color` on the strip, and using that for the color argument. We light up the entire strip by using a for loop to set the color of every LED on the strip, which looks like this:
 ```c++
 for (int i = 0; i < LED_COUNT; i++) {
@@ -37,3 +43,24 @@ Lighting things up
 On the RoboRIO side, create a `byte` array of length one to store the byte you will send to the Arduino. Change the byte being sent by setting the first index of the array to some integer. To send a byte to the Arduino, call `writeBulk` on the I2C object you created earlier, providing the one byte array as the argument. You should put this call inside of the subsystem `periodic` method so the Arduino is constantly receiving bytes.
 
 On the Arduino side, you should already have code in place to read the byte sent. You should also figure out what pin(s) the LED strip(s) are. Use switch-case to set the LEDs to different colors. In each case, use a for loop like explained to set the color of the LEDs and use different functions to get different patterns. You could have a case for all green, alternating green, gradients, etc.
+
+Example
+---
+```c++
+switch (data) {
+	case 1:
+		for (int i = 0; i < LED_COUNT; i++) {
+			strip.setPixelColor(i, strip.Color(0, 255, 0));
+		}
+		// Don't change the LEDs too fast
+		delay(150);
+		break;
+	case 2:
+		for (int i = 0; i < LED_COUNT; i++) {
+			strip.setPixelColor(i, strip.Color(255, 0, 255));
+		}
+		// Don't change the LEDs too fast
+		delay(150);
+		break;
+}
+```
