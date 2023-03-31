@@ -12,7 +12,9 @@ const resourceFiles = [
 	"/icons/favicon.png",
 	"/icons/icon-512.png",
 	"/icons/maskable-icon-512.png",
-	"/index.html",
+	// Homepage path is / 
+	"/",
+	// Pages
 	"/advanced_command_construction.html",
 	"/arduino_on_vs_code.html",
 	"/command_timers.html",
