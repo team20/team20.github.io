@@ -30,7 +30,7 @@ How?
 
 Subsystems
 ---
-Every "major" part of a robot should have its own subsystem, and be named accordingly. A drivetrain gets a `DriveSubsystem`, an arm gets an `ArmSubsystem`, but even seemingly tiny parts like an Arduino get an `ArduinoSubsystem`. Do it in a way that makes sense. Stuff related to one physical mechanism should be isolated to one specific subsystem.
+Every "major" part of a robot should have its own subsystem, and be named accordingly. A drivetrain gets a `DriveSubsystem`, an arm gets an `ArmSubsystem`, but even seemingly tiny parts like an Arduino get a subsystem, so an Arduino gets an `ArduinoSubsystem`. Do it in a way that makes sense. Stuff related to one physical mechanism should be isolated to one specific subsystem.
 
 Each subsystem should initialize and configure all the parts necessary for the mechanism to work(motors, encoders, PID controllers, etc.) The subsystem should then provide a way to manipulate or access these parts. A subsystem will almost always expose a method to set the speed of a motor, for example. A subsystem could also provide a method to read encoder data. These methods then get called by commands. Subsystems also contain a periodic method, which isn't meant to be called manually or by commands but is executed every 20ms, so you can do things like log encoder values.
 

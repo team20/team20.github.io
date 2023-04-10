@@ -41,7 +41,7 @@ On the RoboRIO side, use `new I2C()` to start the I2C connection, providing `Por
 Lighting things up
 ===
 On the RoboRIO side, create a `byte` array of length one to store the byte you will send to the Arduino. Change the byte being sent by setting the first index of the array to some integer. To send a byte to the Arduino, call `writeBulk` on the I2C object you created earlier, providing the one-byte array as the argument. You should put this call inside of the subsystem `periodic` method so the Arduino is constantly receiving bytes.
-In each case in the switch statement, use a for loop like explained above to set the color of the LEDs. You can use different functions to get different patterns. With a switch statement and some functions, you could have a case for all green LEDs, alternating green LEDs, gradients, etc.
+For each case in the switch statement, use a for loop like explained above to set the color of the LEDs. You can use different functions to get different patterns. With a switch statement and some functions, you could have a case for all green LEDs, alternating green LEDs, gradients, etc.
 
 Example
 ---

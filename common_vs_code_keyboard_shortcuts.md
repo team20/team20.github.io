@@ -11,7 +11,7 @@ To use VS Code as efficiently as possible, here are some keyboard shortcuts to s
 - Ctrl + Space
 	- `Trigger Suggest` in the Command Palette. Opens up the autocomplete box. If want to quickly see the available methods in a class or on an object, using this shortcut is very helpful.
 - Ctrl + .
-	- `Quick Fix` in the Command Palette. If there's a code error, and you want to see some quick fixes, click on the part that has the error, and use this shortcut. VS Code will give you the available options to fix that part of code. Don't blindly select an option though, if none of the options look right, you need to do something else.
+	- `Quick Fix` in the Command Palette. If there's a code error, and you want to see some quick fixes, click on the part that has the error, and use this shortcut. VS Code will give you the available options to fix that part of the code. Don't blindly select an option though, if none of the options look right, you need to do something else.
 - F2
 	- `Rename Symbol` in the Command Palette. Allows you to rename methods, variables, classes, etc across the entire codebase without having to do it manually.
 - Ctrl + F2
