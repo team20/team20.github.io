@@ -19,9 +19,11 @@ What this project includes
 - Guides for setting up and configuring tools
 - Other useful information that isn't obvious or used often
 
-In general, if it's non-obvious and leans towards the obscure side of things, e.g, using a timer in a command, stick it here with documentation/an explanation of what does. Mentioning the problem that it solves is also helpful.  
-Guides on specific tasks like PIDs or LEDs are also fine, those fall under "Explanations on how to do something" and those tasks are non-obvious. They are commonly used but are considered novel enough to warrant a guide.  
-Putting in knowledge on something initially unfamiliar is also fine. In 2023, we figured out how to control LEDs with an Arduino. The code from the previous year was difficult to understand at first, and no one was able to help us, so we had to figure out how it worked. We figured it out and later decided a guide for it would be helpful for future reference, which is why a guide for LEDs exists.
+In general, if it's non-obvious and leans towards the obscure side of things, e.g., using a timer in a command, stick it here with documentation/an explanation of what does. Mentioning the problem that it solves is also helpful.
+
+Guides on specific tasks like PIDs or LEDs are also fine, those fall under "Explanations on how to do something" and those tasks are non-obvious. They are commonly used but are considered novel enough to warrant a guide.
+
+Putting in knowledge on something that is initially unfamiliar is also fine. In 2023, we figured out how to control LEDs with an Arduino. The code from the previous year was difficult to understand at first, and we had to figure out how it worked. After we figured it out, we later decided a guide for it would be helpful for future reference, which is why a guide for LEDs exists.
 
 What this project doesn't include
 ---

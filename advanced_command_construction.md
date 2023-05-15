@@ -9,7 +9,7 @@ Also, sometimes you have a long command sequence(usually for autos,) and you'd p
 
 CommandComposer
 ===
-`CommandComposer` is a way to create long command groups without clogging up `RobotContainer`. To use it, create a static method in `CommandComposer` with a return type of `Command`, and write some logic. Your logic might check some conditions and change a `CommandGroup` accordingly. It might just accept a few parameters, and pass them along to certain commands.
+`CommandComposer` is a way to create long command groups without clogging up `RobotContainer`. This is particularly useful for auto command sequences, where using it makes the code significantly easier to read. To use it, create a static method in `CommandComposer` with a return type of `Command`, and write some logic. The logic might check some conditions and change a `CommandGroup` accordingly. It might just accept a few parameters, and pass them along to certain commands.
 
 Example
 ---

@@ -12,6 +12,7 @@ Team 20 Style
 ---
 Prefix static variables with `s_` and don't capitalize the first word after it, e.g. `s_subsystem`  
 Format with tabs!
+Methods in `CommandComposer` that are used for creating auto command sequences should have the name `getXAuto`, with `X` being the actions that the commands will do. An example is `getScoreThreeThenBalanceAuto`.
 
 WPILib Style  
 ---
