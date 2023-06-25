@@ -12,13 +12,13 @@ const resourceFiles = [
 	"/icons/favicon.png",
 	"/icons/icon-512.png",
 	"/icons/maskable-icon-512.png",
-	// Homepage path is / 
+	// Homepage path is /
 	"/",
 	// Pages and other assets
-  "/assets/color_index_example.svg",
-  "/assets/i_example.svg",
-  "/leds/creating_patterns.html",
-  "/leds/getting_started.html",
+	"/assets/color_index_example.svg",
+	"/assets/i_example.svg",
+	"/leds/creating_patterns.html",
+	"/leds/getting_started.html",
 	"/advanced_command_construction.html",
 	"/arduino_on_vs_code.html",
 	"/command_timers.html",
@@ -30,8 +30,8 @@ const resourceFiles = [
 	"/singleton.html",
 	"/subsystems_and_commands.html",
 	"/suppliers_and_lambda_expressions.html",
-	"/team20_styleguide.html"
-]
+	"/team20_styleguide.html",
+];
 self.addEventListener("install", (e) => {
 	// Make this the current service worker
 	self.skipWaiting();
@@ -43,8 +43,9 @@ self.addEventListener("install", (e) => {
 			console.log("[ServiceWorker] Caching assets");
 			// Add our files to the cache
 			await cache.addAll(resourceFiles);
-		})())
-})
+		})()
+	);
+});
 self.addEventListener("fetch", (e) => {
 	e.respondWith(
 		(async () => {
@@ -82,6 +83,8 @@ self.addEventListener("activate", (e) => {
 					}
 					// Otherwise, delete it, as it is no longer needed
 					return caches.delete(key);
-				}));
-		}));
+				})
+			);
+		})
+	);
 });
