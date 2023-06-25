@@ -10,3 +10,5 @@ Installing Tools for Development
 	- This provides the REV Hardware client, used for configuring a CANSparkMax.
 5. [Phoenix Tuner](https://store.ctr-electronics.com/software/)
 	- This provides Phoenix Tuner, used for configuring hardware from CTRE.
+6. [FRC Radio Configuration Utility](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-3/radio-programming.html)
+	- This provides the FRC Radio Configuration Utility, used for configuring the robot radios.

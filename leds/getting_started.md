@@ -1,4 +1,4 @@
-LEDs
+Getting Started with LEDs
 ===
 Refer to the [Adafruit NeoPixel docs](https://adafruit.github.io/Adafruit_NeoPixel/html/class_adafruit___neo_pixel.html) if you get stuck.  
 LEDs are controlled by an Arduino. Controlling them is actually very simple: create a color object, with RGB values, and use it to set the color of an LED. LEDs are in strips, which means you can create "patterns" by setting different LEDs to different colors.
@@ -21,25 +21,9 @@ for (int i = 0; i < LED_COUNT; i++) {
 `strip.Color` can be replaced by any function that returns a color. Creating a pattern consists of doing math to determine what colors should go to each LED. For example, you can use modulus to alternate colors on an LED strip. This guide won't go into specific patterns, you'll have to figure out how to make a pattern yourself.
 If all of this works correctly, you can start controlling LEDs from a PS4 controller and robot code.
 
-I2C
-===
-I2C is how we communicate to the Arduino from the RoboRIO. We send one byte to the Arduino to tell it what pattern to use. Our data format consists of integers, and we select different LED patterns depending on the number.
-
-On the Arduino side, create a variable outside of any functions to store the integer being sent over I2C. Use `Wire.begin(address)` to start communicating on I2C with `address` as the Arduino's I2C address. Use `Wire.onReceive(receivingMethod)` to run `receivingMethod` every time the Arduino receives data from I2C. Put both of those in the `setup` function, as you want both of these to run once when the program starts. Use `Wire.read()` in `receivingMethod` to get the byte received and store it in the variable you created earlier. This part of your code should look like this:
-```c++
-int ledState = 0;
-void setup() {
-	Wire.begin(address);
-	Wire.onReceive(receivingMethod);
-}
-void receivingMethod() {
-	ledState = Wire.read();
-}
-```
-On the RoboRIO side, use `new I2C()` to start the I2C connection, providing `Port.kMXP` as the port to connect to and a constant containing the exact address you passed into `Wire.begin()`.
-
 Lighting things up
 ===
+We use I2C to communicate with the Arduino from robot code. If haven't read up on I2C, go [here](/i2c). We send one byte to the Arduino to tell it what pattern to use. Our data format consists of integers, and we select different LED patterns depending on the number.
 On the RoboRIO side, create a `byte` array of length one to store the byte you will send to the Arduino. Change the byte being sent by setting the first index of the array to some integer. To send a byte to the Arduino, call `writeBulk` on the I2C object you created earlier, providing the one-byte array as the argument. You should put this call inside of the subsystem `periodic` method so the Arduino is constantly receiving bytes.
 For each case in the switch statement, use a for loop like explained above to set the color of the LEDs. You can use different functions to get different patterns. With a switch statement and some functions, you could have a case for all green LEDs, alternating green LEDs, gradients, etc.
 

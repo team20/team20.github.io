@@ -14,14 +14,18 @@ const resourceFiles = [
 	"/icons/maskable-icon-512.png",
 	// Homepage path is / 
 	"/",
-	// Pages
+	// Pages and other assets
+  "/assets/color_index_example.svg",
+  "/assets/i_example.svg",
+  "/leds/creating_patterns.html",
+  "/leds/getting_started.html",
 	"/advanced_command_construction.html",
 	"/arduino_on_vs_code.html",
 	"/command_timers.html",
 	"/common_vs_code_keyboard_shortcuts.html",
 	"/dashboards.html",
 	"/installing_dev_tools.html",
-	"/leds.html",
+	"/i2c.html",
 	"/pids.html",
 	"/singleton.html",
 	"/subsystems_and_commands.html",
