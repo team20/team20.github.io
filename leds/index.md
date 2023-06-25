@@ -1,3 +1,8 @@
+---
+title: LEDs
+has_children: true
+---
+
 # Getting Started with LEDs
 
 Refer to the [Adafruit NeoPixel docs](https://adafruit.github.io/Adafruit_NeoPixel/html/class_adafruit___neo_pixel.html) if you get stuck.  
