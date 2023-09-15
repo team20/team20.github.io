@@ -12,3 +12,5 @@
    - This provides Phoenix Tuner, used for configuring hardware from CTRE.
 6. [FRC Radio Configuration Utility](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-3/radio-programming.html)
    - This provides the FRC Radio Configuration Utility, used for configuring the robot radios.
+7. [NavXUI](https://pdocs.kauailabs.com/navx-mxp/software/navx-mxp-ui/)
+   - This provides the NavXUI, a program to see the sensor data from the NavX.
