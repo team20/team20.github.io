@@ -1,5 +1,5 @@
 // Increment when you update the repo
-const cacheName = "KnowledgeBase-v7";
+const cacheName = "KnowledgeBase-v8";
 // URLs for all the assets
 const resourceFiles = [
 	// Just The Docs assets
@@ -18,7 +18,7 @@ const resourceFiles = [
 	"/assets/color_index_example.svg",
 	"/assets/i_example.svg",
 	"/leds/creating_patterns.html",
-	"/leds/getting_started.html",
+	"/leds/",
 	"/advanced_command_construction.html",
 	"/arduino_on_vs_code.html",
 	"/command_timers.html",
