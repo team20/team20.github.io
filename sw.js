@@ -27,7 +27,6 @@ const resourceFiles = [
 	"/installing_dev_tools.html",
 	"/i2c.html",
 	"/pids.html",
-	"/singleton.html",
 	"/subsystems_and_commands.html",
 	"/suppliers_and_lambda_expressions.html",
 	"/team20_styleguide.html",
