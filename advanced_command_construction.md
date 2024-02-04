@@ -37,5 +37,5 @@ public static Command createCommandSequence(boolean someCondition, Position posi
 When you need to create commands where their behavior changes depending on outside conditions, use `DeferredCommand`. To use it, use a lambda expression that returns a `Command`. A `CommandComposer` method can also be used in place of a `Command`, as the static methods should return a `Command`.
 
 ```java
-new DeferredCommand(() -> CommandComposer.createCommandSequence(true, Position.FAR));
+new DeferredCommand(() -> CommandComposer.createCommandSequence(true, Position.FAR), Set.of(m_subsystem));
 ```
