@@ -4,7 +4,7 @@ Let's say you have a command and you want to provide it with input from a joysti
 
 ```java
 // If we aren't doing anything else, drive
-m_driveSubsystem.setDefaultCommand(new DefaultDriveCommand(
+m_driveSubsystem.setDefaultCommand(new DefaultDriveCommand(m_driveSubsystem,
 		m_controller.getRawAxis(0)));
 ```
 
@@ -14,7 +14,7 @@ To solve this, we use lambda expressions or anonymous functions. They act like n
 
 ```java
 // If we aren't doing anything else, drive
-m_driveSubsystem.setDefaultCommand(new DefaultDriveCommand(
+m_driveSubsystem.setDefaultCommand(new DefaultDriveCommand(m_driveSubsystem,
 		() -> m_controller.getRawAxis(0)));
 ```
 
@@ -30,16 +30,19 @@ A command's constructor must have a `Supplier` as one of its parameters to accep
 public class DefaultDriveCommand extends CommandBase {
 	// We store the supplier here so all methods can access the supplier
 	private final Supplier<Double> m_forwardSpeed;
+	private final DriveSubsystem m_driveSubsystem;
 
-	public DefaultDriveCommand(Supplier<Double> forwardSpeed) {
+	public DefaultDriveCommand(DriveSubsystem subsystem, Supplier<Double> forwardSpeed) {
+		m_driveSubsystem = subsystem;
 		// Store the supplier
 		m_forwardSpeed = forwardSpeed;
+		addRequirements(subsystem);
 	}
 
 	@Override
 	public void execute() {
 		// Get the value of the lambda expression, and pass it to setMotorSpeed
-		DriveSubsystem.get().setMotorSpeed(m_forwardSpeed.get());
+		m_driveSubsystem.setMotorSpeed(m_forwardSpeed.get());
 	}
 }
 ```
