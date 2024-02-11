@@ -13,6 +13,7 @@ Enum elements should be all uppercase, with words separated by underscores, e.g.
 Prefix static variables with `s_` and don't capitalize the first word after it, e.g. `s_subsystem`  
 Format with tabs!
 Methods in `CommandComposer` that are used for creating auto command sequences should have the name `getXAuto`, with `X` being the actions that the commands will do. An example is `getScoreThreeThenBalanceAuto`.
+Inline command methods in subsystems should have the command name, followed by `Command`. Some examples are `driveCommand` and `toggleIntakeCommand`. Note how the names are essentially the same names that methods would have, just with `Command` added at the end. With that said, the name should describe the action, not the internal methods used to do it. `setModuleStatesCommand` is a bad name, but `driveCommand` is much better.
 
 ## WPILib Style
 
