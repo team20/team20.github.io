@@ -1,5 +1,5 @@
 // Increment when you update the repo
-const cacheName = "KnowledgeBase-v8";
+const cacheName = "KnowledgeBase-v9";
 // URLs for all the assets
 const resourceFiles = [
 	// Just The Docs assets
@@ -9,8 +9,7 @@ const resourceFiles = [
 	"/assets/js/search-data.json",
 	// Actual assets
 	"/icons/apple-touch-icon.png",
-	"/icons/favicon.png",
-	"/icons/icon-512.png",
+	"/icons/favicon.svg",
 	"/icons/maskable-icon-512.png",
 	// Homepage path is /
 	"/",
