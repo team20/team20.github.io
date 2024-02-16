@@ -1,5 +1,5 @@
 // Increment when you update the repo
-const cacheName = "KnowledgeBase-v9";
+const cacheName = "KnowledgeBase-v10";
 // URLs for all the assets
 const resourceFiles = [
 	// Just The Docs assets
