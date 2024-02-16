@@ -33,7 +33,6 @@ If all of this works correctly, you can start controlling LEDs from a PS4 contro
 # Lighting things up
 
 We use I2C to communicate with the Arduino from robot code. If haven't read up on I2C, go [here](/i2c). We send one byte to the Arduino to tell it what pattern to use. Our data format consists of integers, and we select different LED patterns depending on the number.
-On the RoboRIO side, create a `byte` array of length one to store the byte you will send to the Arduino. Change the byte being sent by setting the first index of the array to some integer. To send a byte to the Arduino, call `writeBulk` on the I2C object you created earlier, providing the one-byte array as the argument. You should put this call inside of the subsystem `periodic` method so the Arduino is constantly receiving bytes.
 For each case in the switch statement, use a for loop like explained above to set the color of the LEDs. You can use different functions to get different patterns. With a switch statement and some functions, you could have a case for all green LEDs, alternating green LEDs, gradients, etc.
 
 ## Example

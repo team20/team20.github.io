@@ -15,4 +15,16 @@ void receivingMethod() {
 }
 ```
 
-On the RoboRIO side, use `new I2C()` to start the I2C connection, providing `Port.kMXP` as the port to connect to and a constant containing the exact address you passed into `Wire.begin()`.
+On the roboRIO side, use `new I2C()` to start the I2C connection, providing `Port.kMXP` as the port to connect to and a constant containing the exact address you passed into `Wire.begin()`. To send data, call `writeBulk` with a byte array containing the data you want to send.
+
+```java
+public class ArduinoSubsystem extends SubsystemBase {
+	private final I2C m_i2c = new I2C(I2C.Port.kMXP, ArduinoConstants.kAddress);
+
+	public void sendData(byte code) {
+		m_i2c.writeBulk(new byte[] { code });
+	}
+}
+```
+
+Avoid calling sendData in a periodic method. While this will probably be fine, it's best to avoid spamming the Arduino with data and filling buffers with data (both on the Arduino and on the roboRIO).
