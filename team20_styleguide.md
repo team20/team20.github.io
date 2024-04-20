@@ -11,9 +11,10 @@ Enum elements should be all uppercase, with words separated by underscores, e.g.
 ## Team 20 Style
 
 Prefix static variables with `s_` and don't capitalize the first word after it, e.g. `s_subsystem`  
-Format with tabs!
-Methods in `CommandComposer` that are used for creating auto command sequences should have the name `getXAuto`, with `X` being the actions that the commands will do. An example is `getScoreThreeThenBalanceAuto`.
-Inline command methods in subsystems should have the command name, followed by `Command`. Some examples are `driveCommand` and `toggleIntakeCommand`. Note how the names are essentially the same names that methods would have, just with `Command` added at the end. With that said, the name should describe the action, not the internal methods used to do it. `setModuleStatesCommand` is a bad name, but `driveCommand` is much better.
+Format with tabs!  
+The contents of a subsystem should be organized in a specific order: Enums, variables, constructors, any other non-Command methods, a periodic method if you need one, and inline command factory methods. This order makes it easier to find code in subsystems.  
+Inline command factory methods in subsystems should have the command name, followed by `Command`. Some examples are `driveCommand` and `toggleIntakeCommand`. Note how the names are essentially the same names that methods would have, just with `Command` added at the end. With that said, the name should describe the action, not the internal methods used to do it. `setModuleStatesCommand` is a bad name, but `driveCommand` is much better.  
+Methods in `CommandComposer` that are used for creating auto command sequences should have the name `getXAuto`, with `X` being the actions that the commands will do. An example is `getScoreThreeThenBalanceAuto`. Methods that don't create auto command sequences should follow the same style as inline command factory methods.
 
 ## WPILib Style
 
