@@ -1,4 +1,6 @@
 # Style Guide
+- TOC
+{:toc}
 
 Keeping code well formatted makes it easier to figure out what's happening. Without it, your codebase looks like a jumbled mess that's completely unreadable, and no one will be able to figure out what your code does. In general, follow the general Java style, but there are specific differences to be aware of when coding at Team 20. The two differences are split into differences that come from WPILib and differences that come from Team 20.
 

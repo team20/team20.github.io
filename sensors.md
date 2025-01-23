@@ -1,4 +1,6 @@
 # Sensors
+- TOC
+{:toc}
 
 Sensors are important to programmers because it makes controlling mechanisms vastly easier. Better sensors enable automation and mean less work for everyone involved (including non-programmers.)
 

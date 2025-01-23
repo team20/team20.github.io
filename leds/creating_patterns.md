@@ -3,6 +3,8 @@ parent: LEDs
 ---
 
 # Creating Patterns with LEDs
+- TOC
+{:toc}
 
 Creating patterns with LEDs is simple. We use two primary variables to determine the color each LED will show.
 

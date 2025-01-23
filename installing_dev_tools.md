@@ -1,4 +1,6 @@
 # Installing Tools for Development
+- TOC
+{:toc}
 
 1. [WPILib and VS Code](https://github.com/wpilibsuite/allwpilib/releases)
    - This provides WPILib, VS Code(the IDE,) and some other tools like dashboards.

@@ -1,4 +1,6 @@
 # Dashboards
+- TOC
+{:toc}
 
 Debugging robot code doesn't work in the same way debugging regular programs does. While setting breakpoints does work, when a breakpoint is reached, the robot tends to misbehave in weird ways. Instead, to see the values of variables in the code, we publish data to NetworkTables. For an intro to NetworkTables, see the [WPILib docs on NetworkTables](https://docs.wpilib.org/en/latest/docs/software/networktables/networktables-intro.html).
 

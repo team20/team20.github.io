@@ -4,6 +4,8 @@ has_children: true
 ---
 
 # Getting Started with LEDs
+- TOC
+{:toc}
 
 Refer to the [Adafruit NeoPixel docs](https://adafruit.github.io/Adafruit_NeoPixel/html/class_adafruit___neo_pixel.html) if you get stuck.  
 LEDs are controlled by an Arduino. Controlling them is actually very simple: create a color object, with RGB values, and use it to set the color of an LED. LEDs are in strips, which means you can create "patterns" by setting different LEDs to different colors.

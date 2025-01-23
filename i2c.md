@@ -1,4 +1,6 @@
 # I2C
+- TOC
+{:toc}
 
 I2C is how we communicate to the Arduino from the RoboRIO.
 

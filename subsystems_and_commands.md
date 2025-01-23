@@ -1,4 +1,6 @@
 # Subsystems and Commands
+- TOC
+{:toc}
 
 You may wonder why robot code is organized into subsystems and commands.  
 Maybe you want to know how it works and how to use it. This is the place to figure out both.

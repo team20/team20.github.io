@@ -1,4 +1,6 @@
 # VS Code Keyboard Shortcuts
+- TOC
+{:toc}
 
 To use VS Code as efficiently as possible, here are some keyboard shortcuts to speed up common tasks.
 

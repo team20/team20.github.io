@@ -6,6 +6,9 @@ permalink: /
 
 # Team 20 Knowledge Base
 
+- TOC
+{:toc}
+
 Welcome to the Team 20 Programming Knowledge Base! This knowledge base houses various programming resources, ranging from explaining robot code to advanced tricks and examples that can be used in robot code. It is meant to be a reference of sorts for programming-related tasks like programming LEDs, keyboard shortcuts, and software downloads, as well as a place to store information on how to do something that's useful but isn't used often enough to be "common knowledge."
 
 # Project Scope

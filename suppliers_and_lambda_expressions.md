@@ -1,4 +1,6 @@
 # Suppliers and Lambda Expressions
+- TOC
+{:toc}
 
 Let's say you have a command and you want to provide it with input from a joystick. A common use case is for some kind of drive command, as a joystick can be used to control the speed of the robot. If you've never used lambda expressions, you might be tempted to pass in the joystick input by directly calling `getRawAxis` to get the joystick data like this:
 

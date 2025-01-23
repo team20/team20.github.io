@@ -1,4 +1,6 @@
 # PIDs
+- TOC
+{:toc}
 
 If PIDs are a completely new concept for you, read the [WPILib docs on PID](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/introduction/introduction-to-pid.html). Otherwise, continue.
 
